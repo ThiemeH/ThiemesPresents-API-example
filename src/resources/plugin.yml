@@ -1,0 +1,7 @@
+name: ThiemesPresents-API-Example
+main: nl.thieme.tpe.Main
+version: 1.0
+api-version: 1.13
+authors: [ ThiemeH ]
+depend: [ ThiemesPresents ]
+description: Showcase of the API possibilities!
