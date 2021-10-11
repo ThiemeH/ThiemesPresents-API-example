@@ -23,6 +23,9 @@ Here's a few examples of how you could use **Thieme's Presents API**. All of the
    2. [Adding Custom Presents](#Adding-Custom-Presents)
 4. [Support](#support)
 
+<br />
+<br />
+
 ## Getting started
 
 First of all, make sure to add the jar file to your project.
@@ -48,7 +51,8 @@ Now you're all set!
 
 ---
 
-
+<br />
+<br />
 
 ## Events
 
@@ -65,7 +69,7 @@ The API contains the following events:
 
 ---
 
-
+<br />
 
 ### PresentOpenEvent.Pre
 
@@ -82,7 +86,7 @@ Code example:
 
 
 ```java
-		@EventHandler
+    @EventHandler
     public void onPresentOpen(PresentOpenEvent.Pre e) {
         Player p = e.getPlayer();
         e.setCancelled(true);
@@ -90,7 +94,7 @@ Code example:
     }
 ```
 
-
+<br />
 
 ### PresentOpenEvent.Post
 ---
@@ -101,7 +105,7 @@ Available methods:
 | getPlayer(): Player              | Returns Player that tries to open the present            |
 | getPresentItemStack(): ItemStack | Returns the ItemStack (gift/present) that will be opened |
 
-
+<br />
 
 ### PresentSignEvent.Pre
 
@@ -114,7 +118,7 @@ Available methods:
 | getPresentItemStack(): ItemStack | Returns the ItemStack (gift/present) that will be signed |
 | setCancelled(boolean): Void      | Cancel the event                                         |
 
-
+<br />
 
 ### PresentSignEvent.Post
 
@@ -132,7 +136,7 @@ Available methods:
 Code example:
 
 ```java
-		@EventHandler
+    @EventHandler
     public void onSign(PresentSignEvent.Post e) {
         e.setCancelled(true);
         e.getPlayer().sendMessage("You wrote: " + e.getMessage());
@@ -140,6 +144,8 @@ Code example:
 ```
 
 Note: the item is not signed yet before this event
+
+<br />
 
 ### PresentWrapEvent.Pre
 
@@ -154,7 +160,7 @@ Available methods:
 | getToBeWrappedStack(): ItemStack | Returns the item that will be wrapped            |
 | setCancelled(boolean): Void      | Cancel the event                                 |
 
-
+<br />
 
 ### PresentWrapEvent.Post
 
@@ -171,7 +177,7 @@ Available methods:
 Code example:
 
 ```java
-		@EventHandler
+    @EventHandler
     public void onPresentWrap(PresentWrapEvent.Post e) {
         ItemStack is = e.getPresentItemStack();
         ItemMeta im = is.getItemMeta();
@@ -182,7 +188,8 @@ Code example:
 
 ---
 
-
+<br />
+<br />
 
 ## Custom Presents
 
@@ -229,7 +236,7 @@ Let's take a look at the public methods of the `Present` class:
 In version 1.0, presentNBT stores the following data:
 
 ```java
-		// is signed
+    // is signed
     public boolean isSigned = false;
 
     // present itself
@@ -259,7 +266,8 @@ ThiemesPresents.getPresentManager().reloadEssentialItems(); // Add new presents 
 
 Voila, that's it. <br>You simply just call the main class, get the PresentManager and add a present.<br>Make sure you do call the `reloadEssentialItems` method if you're planning on using a /give command (highly recommended)
 
-
+<br />
+<br />
 
 ## Support
 
